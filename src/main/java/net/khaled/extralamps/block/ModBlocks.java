@@ -1,10 +1,7 @@
 package net.khaled.extralamps.block;
 
 import net.khaled.extralamps.ExtraLamps;
-import net.khaled.extralamps.block.custom.BlueLampBlock;
-import net.khaled.extralamps.block.custom.GreenLampBlock;
-import net.khaled.extralamps.block.custom.MagentaLampBlock;
-import net.khaled.extralamps.block.custom.RedLampBlock;
+import net.khaled.extralamps.block.custom.*;
 import net.khaled.extralamps.item.ModCreativeModeTab;
 import net.khaled.extralamps.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -33,6 +30,9 @@ public class ModBlocks {
             () -> new GreenLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(GreenLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> MAGENTA_LAMP = registerBlock("magenta_lamp",
             () -> new MagentaLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(MagentaLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> YELLOW_LAMP = registerBlock("yellow_lamp",
+            () -> new YellowLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(YellowLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
