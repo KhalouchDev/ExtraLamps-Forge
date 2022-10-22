@@ -31,7 +31,7 @@ public class ModBlocks {
             () -> new RedLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(RedLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> GREEN_LAMP = registerBlock("green_lamp",
             () -> new GreenLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(GreenLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
-    public static final RegistryObject<Block> MAGENTA_LAMP = registerBlock("blue_lamp",
+    public static final RegistryObject<Block> MAGENTA_LAMP = registerBlock("magenta_lamp",
             () -> new MagentaLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(MagentaLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
 
 
