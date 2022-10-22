@@ -2,10 +2,10 @@ package net.khaled.extralamps.block;
 
 import net.khaled.extralamps.ExtraLamps;
 import net.khaled.extralamps.block.custom.BlueLampBlock;
+import net.khaled.extralamps.block.custom.RedLampBlock;
 import net.khaled.extralamps.item.ModCreativeModeTab;
 import net.khaled.extralamps.item.ModItems;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -24,17 +24,18 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> BLUE_LAMP = registerBlock("blue_lamp",
-            () -> new BlueLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(BlueLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)), ModCreativeModeTab.LAMPS);
+            () -> new BlueLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(BlueLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> RED_LAMP = registerBlock("red_lamp",
+            () -> new RedLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(RedLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
 
-
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn, tab);
+        registerBlockItem(name, toReturn);
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
-        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
+        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(ModCreativeModeTab.LAMPS)));
     }
 
     public static void register(IEventBus eventBus) {
