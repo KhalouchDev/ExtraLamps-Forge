@@ -1,5 +1,7 @@
 {
   "item.extralamps.zircon": "Zircon",
 
-  "block.extralamps.blue_lamp": "Blue Lamp"
+  "block.extralamps.blue_lamp": "Blue Lamp",
+
+  "itemGroup.ExtraLamps": "Lamps"
 }
