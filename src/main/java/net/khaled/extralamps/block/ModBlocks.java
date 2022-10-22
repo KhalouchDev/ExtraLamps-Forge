@@ -2,6 +2,7 @@ package net.khaled.extralamps.block;
 
 import net.khaled.extralamps.ExtraLamps;
 import net.khaled.extralamps.block.custom.BlueLampBlock;
+import net.khaled.extralamps.block.custom.GreenLampBlock;
 import net.khaled.extralamps.block.custom.RedLampBlock;
 import net.khaled.extralamps.item.ModCreativeModeTab;
 import net.khaled.extralamps.item.ModItems;
@@ -27,6 +28,10 @@ public class ModBlocks {
             () -> new BlueLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(BlueLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> RED_LAMP = registerBlock("red_lamp",
             () -> new RedLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(RedLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> GREEN_LAMP = registerBlock("green_lamp",
+            () -> new GreenLampBlock(BlockBehaviour.Properties.of(Material.GLASS).strength(0.3f).lightLevel(state -> state.getValue(GreenLampBlock.LIT) ? 15 : 0).sound(SoundType.GLASS)));
+
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
