@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "extralamps:gray_lamp"
+          "name": "extralamps:light_gray_lamp"
         }
       ]
     }
